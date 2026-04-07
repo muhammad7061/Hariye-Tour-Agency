@@ -14,17 +14,31 @@ const userSchema = new mongoose.Schema(
       lowercase: true,
       trim: true,
     },
+
     passwordHash: {
       type: String,
-      required: true,
+      required: function () {
+        return !this.googleId; // 🔥 only required if NOT Google user
+      },
     },
+
+    googleId: {
+      type: String,
+      default: null,
+    },
+
+    photo: {
+      type: String,
+      default: null,
+    },
+
     role: {
       type: String,
       enum: ["user", "admin", "superadmin"],
       default: "user",
     },
   },
-  { timestamps: true },
+  { timestamps: true }
 );
 
 const User = mongoose.model("User", userSchema);

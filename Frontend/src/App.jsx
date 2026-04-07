@@ -19,6 +19,7 @@ import Setting from "./Dashbord/setting";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import { ProtectedRoute, AdminRoute } from "./components/ProtectedRoute";
+import LoginSuccess from "./pages/LoginSuccess";
 
 const App = () => {
   return (
@@ -122,6 +123,7 @@ const App = () => {
           </AdminRoute>
         }
       />
+      <Route path="/login-success" element={<LoginSuccess />} />
 
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

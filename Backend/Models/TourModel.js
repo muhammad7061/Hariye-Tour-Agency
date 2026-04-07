@@ -61,13 +61,13 @@ TourSchema.pre('save', async function(next) {
   // Validate max_Gust >= Available_Spots
   if (this.max_Gust < this.Available_Spots) {
     const error = new Error('Maximum guests cannot be less than available spots');
-    return next(error);
+    return error;
   }
 
   // Validate dates
   if (this.startDay >= this.endDay) {
     const error = new Error('End date must be after start date');
-    return next(error);
+    return error;
   }
 
   // Validate duration matches date difference
@@ -77,7 +77,7 @@ TourSchema.pre('save', async function(next) {
     this.Duration = durationDays;
   }
 
-  next();
+  // next();
 });
 
 // Pre-update middleware for validation
@@ -93,7 +93,7 @@ TourSchema.pre('findOneAndUpdate', async function(next) {
 
     if (newMaxGust < newAvailableSpots) {
       const error = new Error('Maximum guests cannot be less than available spots');
-      return next(error);
+      return error;
     }
   }
 
@@ -104,11 +104,11 @@ TourSchema.pre('findOneAndUpdate', async function(next) {
 
     if (startDate >= endDate) {
       const error = new Error('End date must be after start date');
-      return next(error);
+      return error;
     }
   }
 
-  next();
+  // next();
 });
 
 // Middleware: Auto-update status based on dates
