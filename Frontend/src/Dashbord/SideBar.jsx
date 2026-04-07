@@ -24,7 +24,7 @@ const sidebarLinks = [
     path: "/admin/dash/BookingTable",
   },
   {
-    name: "Tour Accepted",
+    name: "Accepted Bookings",
     icon: <ClipboardList size={20} />,
     path: "/admin/requests",
   },
