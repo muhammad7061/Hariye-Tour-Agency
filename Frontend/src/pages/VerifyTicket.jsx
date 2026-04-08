@@ -13,7 +13,7 @@ const VerifyTicket = () => {
     const fetchBooking = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:9005/api/readBooking/${id}`,
+          `https://hariye-tour-agency-hgia.onrender.com/api/readBooking/${id}`,
         );
         setBooking(res.data.data);
       } catch (err) {
@@ -28,7 +28,7 @@ const VerifyTicket = () => {
   const handleConfirmUse = async () => {
     try {
       const res = await axios.put(
-        `http://localhost:9005/api/verify-ticket/${id}`,
+        `https://hariye-tour-agency-hgia.onrender.com/api/verify-ticket/${id}`,
       );
       setMessage(res.data.message);
       setBooking({ ...booking, status: "used" });

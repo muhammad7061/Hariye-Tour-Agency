@@ -19,7 +19,7 @@ const Ticket = () => {
     const fetchTicket = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:9005/api/readBooking/${id}`,
+          `https://hariye-tour-agency-hgia.onrender.com/api/readBooking/${id}`,
         );
         setTicketData(res.data.data);
       } catch (error) {

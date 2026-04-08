@@ -24,8 +24,8 @@ const MyBookings = () => {
   const fetchMyBookings = useCallback(async () => {
     try {
       const url = user?.email
-        ? `http://localhost:9005/api/readBooking?email=${encodeURIComponent(user.email)}`
-        : "http://localhost:9005/api/readBooking";
+        ? `https://hariye-tour-agency-hgia.onrender.com/api/readBooking?email=${encodeURIComponent(user.email)}`
+        : "https://hariye-tour-agency-hgia.onrender.com/api/readBooking";
 
       const res = await axios.get(url);
       setBookings(res.data.data || []);
@@ -44,7 +44,7 @@ const MyBookings = () => {
     if (window.confirm("Are you sure you want to cancel this booking?")) {
       try {
         await axios.delete(
-          `http://localhost:9005/api/deleteBooking/${id}`,
+          `https://hariye-tour-agency-hgia.onrender.com/api/deleteBooking/${id}`,
         );
 
         setBookings(bookings.filter((item) => item._id !== id));
@@ -84,7 +84,7 @@ const MyBookings = () => {
               >
                 <div className="w-full md:w-[280px] h-[200px] overflow-hidden">
                   <img
-                    src={`http://localhost:9005/images/${item.tourId?.image}`}
+                    src={`https://hariye-tour-agency-hgia.onrender.com/images/${item.tourId?.image}`}
                     className="w-full h-full object-cover"
                     alt={item.tourId?.title}
                   />
