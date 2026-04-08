@@ -23,7 +23,7 @@ export default function TourDetails() {
   useEffect(() => {
     if (id) {
       axios
-        .get(`https://hariye-tour-agency-hgia.onrender.com/api/readSingleTour/${id}`)
+        .get(`https://hariye-tour-agency-u7bh.onrender.com/api/readSingleTour/${id}`)
         .then((res) => {
           setTour(res.data.data);
           setLoading(false);
@@ -77,7 +77,7 @@ export default function TourDetails() {
     try {
       // ✅ BACKEND CALL
       const response = await axios.post(
-        "https://hariye-tour-agency-hgia.onrender.com/api/bookingRegister",
+        "https://hariye-tour-agency-u7bh.onrender.com/api/bookingRegister",
         {
           full_name: userData.name.trim(),
           email: userData.email.trim(),
@@ -109,7 +109,7 @@ export default function TourDetails() {
 
       // ✅ REAL-TIME UPDATE TOUR DATA
       const updatedTour = await axios.get(
-        `https://hariye-tour-agency-hgia.onrender.com/api/readSingleTour/${id}`,
+        `https://hariye-tour-agency-u7bh.onrender.com/api/readSingleTour/${id}`,
       );
       setTour(updatedTour.data.data);
 
@@ -151,7 +151,7 @@ export default function TourDetails() {
         <div className="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden">
           <div className="relative h-[400px]">
             <img
-              src={`https://hariye-tour-agency-hgia.onrender.com/images/${tour.image}`}
+              src={`https://hariye-tour-agency-u7bh.onrender.com/images/${tour.image}`}
               className="w-full h-full object-cover"
               alt={tour.title}
             />

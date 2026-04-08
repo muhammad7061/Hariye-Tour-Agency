@@ -24,7 +24,7 @@ function BookingTable() {
   const fetchBookings = useCallback(async () => {
     try {
       const res = await axios.get(
-        "https://hariye-tour-agency-hgia.onrender.com/api/readBooking",
+        "https://hariye-tour-agency-u7bh.onrender.com/api/readBooking",
       );
       const reversedData = (res.data.data || []).reverse();
       setBookings(reversedData);
@@ -57,7 +57,7 @@ function BookingTable() {
       setActionLoading(id);
       try {
         const response = await axios.put(
-          `https://hariye-tour-agency-hgia.onrender.com/api/updateBookingStatus/${id}`,
+          `https://hariye-tour-agency-u7bh.onrender.com/api/updateBookingStatus/${id}`,
           { status: newStatus },
         );
         if (response.data.success) {

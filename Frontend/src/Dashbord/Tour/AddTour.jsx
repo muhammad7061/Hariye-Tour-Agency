@@ -99,8 +99,8 @@ const AddTour = ({ isOpen, onClose, onSubmit, editData }) => {
       }
 
       const url = editData
-        ? `https://hariye-tour-agency-hgia.onrender.com/api/updateTour/${editData._id}`
-        : "https://hariye-tour-agency-hgia.onrender.com/api/tourRegister";
+        ? `https://hariye-tour-agency-u7bh.onrender.com/api/updateTour/${editData._id}`
+        : "https://hariye-tour-agency-u7bh.onrender.com/api/tourRegister";
 
       const response = await fetch(url, {
         method: editData ? "PUT" : "POST",
